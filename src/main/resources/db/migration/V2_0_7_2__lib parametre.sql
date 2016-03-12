@@ -1,0 +1,1 @@
+ALTER TABLE `parametre` MODIFY `lib_param` VARCHAR(200) NOT NULL COMMENT 'libellé du paramètre';

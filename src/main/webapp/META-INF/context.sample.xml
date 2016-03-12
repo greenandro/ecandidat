@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<!-- Desactive la persistence des sessions apres un redemarrage -->
+	<Manager pathname="" />
+
+	<!-- Connexion a la base de donnees -->
+	<Resource name="jdbc/dbEcandidat"
+		type="javax.sql.DataSource"
+		username="xxxx"
+		password="xxxx"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://xxxx:3306/xxxx"
+		maxActive="20"
+		maxIdle="4"
+		maxWait="10000"
+		removeAbandoned="true"
+		removeAbandonedTimeout="600"
+		logAbandoned="true"
+		validationQuery="select '1'" />
+		
+	<!-- Parametrage du SI Scolarité -->	
+	<Parameter name="siscol.implementation" value="siScolApogeeWSServiceImpl" />
+		
+	<!-- Connexion a la base de donnees -->
+	<Resource name="jdbc/dbSiScol"
+		type="javax.sql.DataSource"
+		username="xxxx"
+		password="xxxx"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		url="jdbc:oracle:thin:@ xxxx:xxxx:xxxx"
+		maxActive="20"
+		maxIdle="4"
+		maxWait="1"
+		removeAbandoned="true"
+		removeAbandonedTimeout="600"
+		logAbandoned="true"
+		validationQuery="select '1' from dual" />
+
+	<!-- URL de l'application -->
+	<Parameter name="app.url" value="http://eCandidat.univ.fr" />
+	<!-- URL du CAS -->
+	<Parameter name="cas.url" value="https://servicecas.univ.fr" />
+
+	<!-- Assistance -->
+	<Parameter name="assistance.documentation.url" value="http://doc.univ.fr" />
+	<Parameter name="assistance.documentation.url.candidat" value="http://doc.univ.fr/candidat/" />
+	<Parameter name="assistance.documentation.url.candidat.en" value="http://doc.univ.fr/candidat/en" />
+	<Parameter name="assistance.helpdesk.url" value="http://helpdesk.univ.fr" />
+	<Parameter name="assistance.contact.mail" value="contact.ecandidat@univ.fr" />
+
+	<!-- Configuration du LDAP -->
+	<Parameter name="ldap.base" value="dc=univ,dc=fr" />
+	<Parameter name="ldap.url" value="ldaps://xxx.fr:xxx" />
+	<Parameter name="ldap.branche.people" value="ou=people" />
+	<Parameter name="ldap.user" value="cn=create,dc=sys" />
+	<Parameter name="ldap.pwd" value="passcreate" />
+	
+	<Parameter name="ldap.champs.uid" value="uid" />
+	<Parameter name="ldap.champs.displayName" value="displayName" />
+	<Parameter name="ldap.champs.mail" value="mail" />
+	<Parameter name="ldap.champs.sn" value="sn" />
+	<Parameter name="ldap.champs.cn" value="cn" />
+	<Parameter name="ldap.champs.supannCivilite" value="supannCivilite" />
+	<Parameter name="ldap.champs.supannEtuId" value="supannEtuId" />
+	<Parameter name="ldap.champs.givenName" value="givenName" />
+	
+	<Parameter name="ldap.filtre.personnel" value="(eduPersonAffiliation=employee)" />
+	
+	<!-- Administrateur -->
+	<Parameter name="admin.technique" value="xxxx" />
+
+	<!-- Configuration de l'envoi de mails d'erreur -->
+	<Parameter name="mail.smtpHost" value="xxx.univ.fr" />
+	<Parameter name="mail.from" value="ecandidat@univ.fr" />
+	<Parameter name="mail.from.noreply" value="no-reply.ecandidat@univ.fr" />
+	<Parameter name="mail.to" value="admin.technique@univ.fr" />
+
+	<!-- Configuration du stockage de fichier -->
+	<Parameter name="file.cmis.atompub.url" value="http://ged.univ.fr/nuxeo/atom/cmis" />
+	<Parameter name="file.cmis.repository" value="default" />
+	<Parameter name="file.cmis.user" value="xxxx" />
+	<Parameter name="file.cmis.pwd" value="xxxx" />
+	<Parameter name="file.cmis.candidat.id" value="xxxx-xxxx-xxxx-xxxx-xxxx-xxxx" />
+	<Parameter name="file.cmis.gestionnaire.id" value="xxxx-xxxx-xxxx-xxxx-xxxx" />
+
+	<Parameter name="file.filesystem.candidat.path" value="/home/home-j2ee/tomcat-eCandidat/work/fichier/candidat/" />
+	<Parameter name="file.filesystem.gestionnaire.path" value="/home/home-j2ee/tomcat-eCandidat/work/fichier/gestionnaire/" />
+	
+	<!-- LimeSurvey -->
+	<Parameter name="limesurvey.path" value="http://limesurvey.univ-fr/index.php/admin/remotecontrol" />	
+	<Parameter name="limesurvey.user" value="xxxx" />
+	<Parameter name="limesurvey.pass" value="xxxx" />
+	
+	<!-- Configuration de la programmation des batchs -->
+	<Parameter name="batch.fixedRate" value="60000" />
+	
+	<!-- Compte Piwik ou Google Analytics, facultatif-->
+	<Parameter name="piwikAnalytics.trackerUrl" value="stat.univ.fr" />
+	<Parameter name="piwikAnalytics.siteId" value="123" />
+
+	<!-- Mode demo -->
+	<Parameter name="demoMode" value="false" />
+	<!-- Mode production : Desactive le mode debug -->
+	<Parameter name="productionMode" value="true" />
+	<!-- Active/Desactive le push -->
+	<Parameter name="enablePush" value="true" />
+	
+</Context>

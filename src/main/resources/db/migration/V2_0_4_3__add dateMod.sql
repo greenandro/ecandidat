@@ -1,0 +1,3 @@
+ALTER TABLE `type_statut` ADD COLUMN `dat_mod_typ_statut` TIMESTAMP NULL COMMENT 'date de modification' AFTER `id_i18n_lib_typ_statut`;
+ALTER TABLE `type_traitement` ADD COLUMN `dat_mod_typ_trait` TIMESTAMP NULL COMMENT 'date de modification' AFTER `id_i18n_lib_typ_trait`;
+ALTER TABLE `type_statut_piece` ADD COLUMN `dat_mod_typ_statut_piece` TIMESTAMP NULL COMMENT 'date de modification' AFTER `id_i18n_lib_typ_statut_piece`;

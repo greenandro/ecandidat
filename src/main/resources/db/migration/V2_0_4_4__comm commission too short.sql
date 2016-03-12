@@ -1,0 +1,1 @@
+ALTER TABLE `commission` MODIFY `comment_retour_comm` VARCHAR(500);

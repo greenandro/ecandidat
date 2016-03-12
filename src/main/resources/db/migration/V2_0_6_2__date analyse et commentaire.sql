@@ -1,0 +1,4 @@
+ALTER TABLE `centre_candidature` ADD COLUMN `dat_analyse_ctr_cand` DATE NULL DEFAULT NULL COMMENT 'date de pré-analyse du dossier par défaut' AFTER `dat_jury_ctr_cand`;
+ALTER TABLE `formation`	ADD COLUMN `dat_analyse_form` DATE NULL DEFAULT NULL COMMENT 'date de pré-analyse du dossier' AFTER `dat_jury_form`;
+ALTER TABLE `centre_candidature` ADD COLUMN `info_comp_ctr_cand` VARCHAR(500) NULL DEFAULT NULL COMMENT 'informations complémentaires par défaut pour les formations' AFTER `dat_analyse_ctr_cand`;
+ALTER TABLE `formation`	ADD COLUMN `info_comp_form` VARCHAR(500) NULL DEFAULT NULL COMMENT 'informations complémentaires de la formation' AFTER `preselect_lieu_form`;

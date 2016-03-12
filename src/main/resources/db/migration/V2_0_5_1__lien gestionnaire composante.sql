@@ -1,0 +1,5 @@
+ALTER TABLE `gestionnaire`	ADD COLUMN `tem_all_comm_gest` BIT(1) NOT NULL COMMENT 'témoin si le gestionnaire est gestionnaire de toutes les commissions du centre de candidature' AFTER `cod_cge`;
+CREATE TABLE gestionnaire_commission (id_droit_profil_ind int(10) NOT NULL comment 'id du profil gestionnaire', id_comm int(10) NOT NULL comment 'id de la commission') ENGINE=InnoDB;
+ALTER TABLE gestionnaire_commission ADD INDEX gestionnaire_gestionnaire_commission_id_droit_profil_ind (id_droit_profil_ind), ADD CONSTRAINT gestionnaire_gestionnaire_commission_id_droit_profil_ind FOREIGN KEY (id_droit_profil_ind) REFERENCES gestionnaire (id_droit_profil_ind);
+ALTER TABLE gestionnaire_commission ADD INDEX commission_gestionnaire_commission_id_comm (id_comm), ADD CONSTRAINT commission_gestionnaire_commission_id_comm FOREIGN KEY (id_comm) REFERENCES commission (id_comm);
+update gestionnaire set tem_all_comm_gest = 1;

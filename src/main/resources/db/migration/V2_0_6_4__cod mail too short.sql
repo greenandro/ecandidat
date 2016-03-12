@@ -1,0 +1,1 @@
+ALTER TABLE `mail` MODIFY `cod_mail` VARCHAR(30) NOT NULL COMMENT 'code du mail';

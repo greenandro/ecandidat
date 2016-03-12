@@ -1,0 +1,2 @@
+CREATE TABLE histo_num_dossier (num_dossier varchar(8) NOT NULL comment 'identifiant du candidat : 6 caractères alphanumériques aléatoires en majuscule préfixés par deux lettres paramétrées au niveau de l’application', cod_camp varchar(20) NOT NULL comment 'code de la campagne', PRIMARY KEY (num_dossier)) comment='table d''historique des numéro de dossier' ENGINE=InnoDB;
+INSERT INTO histo_num_dossier (SELECT compte_minima.num_dossier_opi_cpt_min, campagne.cod_camp FROM compte_minima, campagne WHERE campagne.id_camp = compte_minima.id_camp);

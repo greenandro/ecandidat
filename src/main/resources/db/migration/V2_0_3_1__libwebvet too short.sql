@@ -1,0 +1,1 @@
+ALTER TABLE `formation` MODIFY `lib_form` VARCHAR(120);

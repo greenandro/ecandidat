@@ -1,0 +1,2 @@
+ALTER TABLE `candidature` ADD COLUMN `dat_complet_dossier_cand` DATE NULL DEFAULT NULL  COMMENT 'date changement statut dossier à complet';
+ALTER TABLE `candidature` ADD COLUMN `dat_incomplet_dossier_cand` DATE NULL DEFAULT NULL  COMMENT 'date changement statut dossier à incomplet';

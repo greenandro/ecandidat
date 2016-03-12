@@ -1,0 +1,1 @@
+ALTER TABLE `commission` MODIFY `cod_comm` VARCHAR(30) NOT NULL COMMENT 'code de la commission';

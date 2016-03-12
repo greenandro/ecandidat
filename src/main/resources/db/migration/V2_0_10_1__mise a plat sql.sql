@@ -1,0 +1,10 @@
+ALTER TABLE `candidat_cursus_pro` CHANGE COLUMN `annee_cursus_pro` `annee_cursus_pro` INT(4) NOT NULL COMMENT 'année du curusus';
+ALTER TABLE `candidat_stage` CHANGE COLUMN `annee_stage` `annee_stage` INT(4) NOT NULL COMMENT 'année du stage';
+ALTER TABLE `formulaire_cand` CHANGE COLUMN `reponses_formulaire_cand` `reponses_formulaire_cand` TEXT NULL COMMENT 'les réponses du candidat' AFTER `user_mod_formulaire_cand`;
+ALTER TABLE `siscol_utilisateur` ADD CONSTRAINT `fk_siscol_centre_gestion_utilisateur_cod_cge` FOREIGN KEY (`cod_cge`) REFERENCES `siscol_centre_gestion` (`cod_cge`);
+ALTER TABLE `gestionnaire_commission` COMMENT='table des gestionnaires de commission';
+ALTER TABLE `version` CHANGE COLUMN `dat_version` `dat_version` TIMESTAMP NOT NULL COMMENT 'date de la version';
+ALTER TABLE `siscol_commune` DROP FOREIGN KEY `COM_FK_DEP_01`;
+ALTER TABLE `siscol_commune` ADD CONSTRAINT `fk_siscol_departement_commune_cod_dep` FOREIGN KEY (`cod_dep`) REFERENCES `siscol_departement` (`cod_dep`) ON UPDATE CASCADE;
+ALTER TABLE `siscol_etablissement` DROP FOREIGN KEY `ETB_FK_DEP_01`;
+ALTER TABLE `siscol_etablissement` ADD CONSTRAINT `fk_siscol_departement_etab_cod_dep` FOREIGN KEY (`cod_dep`) REFERENCES `siscol_departement` (`cod_dep`) ON UPDATE CASCADE;

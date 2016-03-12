@@ -1,0 +1,1 @@
+ALTER TABLE `siscol_bac_oux_equ` ADD COLUMN `daa_deb_vld_bac` VARCHAR(4) NULL COMMENT 'Date de début de validité du bac' AFTER `lic_bac`,	ADD COLUMN `daa_fin_vld_bac` VARCHAR(4) NULL COMMENT 'Date de fin de validité du bac' AFTER `daa_deb_vld_bac`;
